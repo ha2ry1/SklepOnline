@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'samouczekcpp', #Nazwa bazy danych z tabelami
+        'USER': 'Admin_Workshop', #nazwa administratora w bazie danych
+        'PASSWORD': '94RoCikCM8LftK', #hasło administratora bazy danych
+        'HOST': '127.0.0.1', #adres ip na którym stoi baza danych, lokalnie 127.0.0.1
+        'PORT': '3308', #port do łączenia z bazą, domyślnie 3306
     }
 }
 
