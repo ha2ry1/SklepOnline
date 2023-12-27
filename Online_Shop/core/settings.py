@@ -37,16 +37,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website.apps.WebsiteConfig',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+#Wskazanie jakie adresy mogą łączyć się z API, na razie jedynie front-endowy serwer.
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -76,7 +86,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'samouczekcpp', #Nazwa bazy danych z tabelami
+        'NAME': 'sklepOnline', #Nazwa bazy danych z tabelami
         'USER': 'Admin_Workshop', #nazwa administratora w bazie danych
         'PASSWORD': '94RoCikCM8LftK', #hasło administratora bazy danych
         'HOST': '127.0.0.1', #adres ip na którym stoi baza danych, lokalnie 127.0.0.1
