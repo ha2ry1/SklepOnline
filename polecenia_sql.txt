@@ -1,0 +1,17 @@
+insert into `website_category`(name) values
+('Komputery'),
+('Laptopy'),
+('Konsole'),
+('Gry'),
+('Oprogramowanie'),
+('Podzespoły komputerowe'),
+('Urządzenia sieciowe'),
+('Aparaty i kamery'),
+('Pamięć zewnętrzna'),
+('Kable i przewody'),
+('Inne akcesoria');
+
+insert into `website_orderstatus`(name) values
+('W trakcie kupywania'),
+('Oczekuje na płatność'),
+('Zrealizowano');
