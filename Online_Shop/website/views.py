@@ -14,6 +14,7 @@ class UserProfileListCreateView(generics.ListCreateAPIView):
 class CategoryListCreateView(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    http_method_names = ['get']
     
 
 class ItemListCreateView(generics.ListCreateAPIView):
