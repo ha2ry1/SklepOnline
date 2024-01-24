@@ -31,7 +31,7 @@ class Item(models.Model): #Przedmiot wystawiany na sprzedaż
     def __str__(self):
         return str(self.id)+". "+self.name
  
-class Sale(models.Model):
+'''class Sale(models.Model):
     item = models.OneToOneField(Item, on_delete=models.CASCADE) #wskazanie do przedmiotu, którego dotyczy sprzedaż
     seller = models.ForeignKey(UserProfile, on_delete=models.CASCADE) #wskazanie do sprzedawcy, jeden sprzedawca może wystawić kilka przedmiotów
     avaible = models.IntegerField() #liczba dostępnych sztuk przedmiotu
@@ -42,7 +42,7 @@ class Sale(models.Model):
     
     def __str__(self):
         return str(self.item.name) + ": $" + str(self.price)
-
+'''
 
 
 class Order(models.Model): #W przypadku wprowadzania adresu odbioru (np. paczkomat) wszystkie adresy mają zostać zapamiętane
@@ -51,7 +51,7 @@ class Order(models.Model): #W przypadku wprowadzania adresu odbioru (np. paczkom
     address = models.CharField(max_length=255) #adres dostawy
     status = models.ForeignKey(OrderStatus, on_delete=models.CASCADE, null=True)
 
-class OrderItems(models.Model):
+class OrderItems(models.Model): #Pozycja zamówienia
     item = models.ForeignKey(Item, on_delete=models.CASCADE) #wskazanie na kupywany przedmiot
     quantity = models.IntegerField() #liczba kupowanych przedmiotów
     order = models.ForeignKey(Order, on_delete=models.CASCADE) #wskazanie zakupu

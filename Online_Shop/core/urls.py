@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls')), #przekierowanie do aplikacji website
+    path('api/', include('website.urls')), #przekierowanie do aplikacji website
 ]

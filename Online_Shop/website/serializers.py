@@ -18,11 +18,13 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
-        
+
+'''      
 class SaleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sale
         fields = '__all__'
+'''
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
