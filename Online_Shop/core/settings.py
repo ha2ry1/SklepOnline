@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from django.conf.urls.static import static
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sklepOnline', #Nazwa bazy danych z tabelami
-        'USER': 'Admin_Workshop', #nazwa administratora w bazie danych
-        'PASSWORD': '94RoCikCM8LftK', #hasło administratora bazy danych
+        'USER': 'root', #nazwa administratora w bazie danych
+        'PASSWORD': '', #hasło administratora bazy danych
         'HOST': '127.0.0.1', #adres ip na którym stoi baza danych, lokalnie 127.0.0.1
         'PORT': '3308', #port do łączenia z bazą, domyślnie 3306
     }
@@ -131,6 +133,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') #Folder do składowania zdjęć
+MEDIA_URL = 'img/'
+print(MEDIA_ROOT)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

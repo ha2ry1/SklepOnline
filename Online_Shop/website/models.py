@@ -23,10 +23,14 @@ class OrderStatus(models.Model): #Status zakupu (np. w trakcie wybierania, oczek
     def __str__(self):
         return self.name
 
+
 class Item(models.Model): #Przedmiot wystawiany na sprzedaż
     name = models.CharField(max_length=255)
     descript = models.TextField(blank=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE) #wskazanie kategori przedmiotu, jedna kategoria może być przypisana do wielu przedmiotów
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    image_url = models.URLField(default="")
+    avaible = models.BooleanField(default=True)
     
     def __str__(self):
         return str(self.id)+". "+self.name
